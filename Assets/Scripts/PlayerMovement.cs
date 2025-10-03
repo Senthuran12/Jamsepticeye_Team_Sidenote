@@ -30,14 +30,7 @@ public class PlayerMovement : MonoBehaviour
             transform.Translate(Vector3.forward * Time.deltaTime * verticalInput);
             //transform.Translate(Vector3.right * Time.deltaTime * horizontalInput);
             transform.Rotate(Vector3.up * horizontalInput * turnSpeed * Time.deltaTime);
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                animator.SetBool("isInteracting", true);
-            }
-            else
-            {
-                animator.SetBool("isInteracting", false);
-            }
+           
         }
         else
         {

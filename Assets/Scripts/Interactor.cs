@@ -10,6 +10,7 @@ public class Interactor : MonoBehaviour
 {
     public Transform InteractorSource;
     public float InteractRange;
+   
     
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,7 @@ public class Interactor : MonoBehaviour
                 if(hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
                 {
                     interactObj.Interact();
-
+                    
                 }
             }
         }
