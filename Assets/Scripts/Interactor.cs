@@ -10,6 +10,7 @@ public class Interactor : MonoBehaviour
 {
     public Transform InteractorSource;
     public float InteractRange;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class Interactor : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
+            //animator.SetBool("isInteracting", true);
             Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
             if(Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
             {
@@ -31,5 +33,6 @@ public class Interactor : MonoBehaviour
                 }
             }
         }
+        
     }
 }

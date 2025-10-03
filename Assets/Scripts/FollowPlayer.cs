@@ -16,6 +16,6 @@ public class FollowPlayer : MonoBehaviour
     void Update()
     {
         //transform.position = capsule.transform.position;
-        transform.position = capsule.transform.position + new Vector3 (0,1,-4);
+        transform.position = capsule.transform.position + new Vector3 (0,1,-3);
     }
 }
