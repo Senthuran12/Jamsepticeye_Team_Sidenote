@@ -8,28 +8,25 @@ public class PlayerInteract : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            float interactRange = 2f;
-            Collider[] colliderArray =Physics.OverlapSphere(transform.position, interactRange);
-            foreach (Collider collider in colliderArray)
+            IInteractable interactable = GetInteractableObject();
+            if (interactable != null)
             {
-               if (collider.TryGetComponent (out NumberGenerator numberGenerator))
-                {
-                    numberGenerator.Interact();
-                }
+                interactable.Interact();    
             }
+            
         }
         
     }
 
-    public NumberGenerator GetInteractableObject()
+    public IInteractable GetInteractableObject()
     {
         float interactRange = 2f;
         Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
         foreach (Collider collider in colliderArray)
         {
-            if (collider.TryGetComponent(out NumberGenerator numberGenerator))
+            if (collider.TryGetComponent(out IInteractable interactable))
             {
-                return numberGenerator;
+                return interactable;
             }
         }
         return null;

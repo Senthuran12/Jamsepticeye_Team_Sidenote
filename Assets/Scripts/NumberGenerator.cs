@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NumberGenerator : MonoBehaviour
+public class NumberGenerator : MonoBehaviour, IInteractable 
 {
     [SerializeField] private string interactText;
 

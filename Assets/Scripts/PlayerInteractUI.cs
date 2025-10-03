@@ -22,10 +22,10 @@ public class PlayerInteractUI : MonoBehaviour
             Hide();
         }
     }
-    private void Show(NumberGenerator numberGenerator)
+    private void Show(IInteractable interactable)
     {
         containerGameObject.SetActive(true);
-        interactTextMeshProUGUI.text = numberGenerator.GetInteractText();
+        interactTextMeshProUGUI.text = interactable.GetInteractText();
     }
 
     private void Hide ()
