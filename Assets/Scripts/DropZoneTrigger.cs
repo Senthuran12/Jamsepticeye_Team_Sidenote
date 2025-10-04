@@ -1,17 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class DropZoneTrigger : MonoBehaviour
+public class DropZoneTrigger : SwitchCamera
 {
-    public GameObject SwitchCamera;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private Image _SwitchCamera;
 
+    void Start()
+    {
+        _SwitchCamera = GetComponent<Image>();
+    }
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("has been interacted");
+       
         if (other.CompareTag("KeyItem"))
         {
-            //SwitchCamera.ChangeCamera(other.gameObject);
+            ChangeCamera();
             Debug.Log("Sphere has dropped on zone");
         }
     }
