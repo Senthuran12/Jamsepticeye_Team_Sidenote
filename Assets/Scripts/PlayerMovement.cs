@@ -28,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("isWalking", true);
             transform.Translate(Vector3.forward * Time.deltaTime * verticalInput);
-            //transform.Translate(Vector3.right * Time.deltaTime * horizontalInput);
             transform.Rotate(Vector3.up * horizontalInput * turnSpeed * Time.deltaTime);
            
         }
