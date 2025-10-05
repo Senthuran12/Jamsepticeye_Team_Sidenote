@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorInteractable : MonoBehaviour
+public class DoorInteractable : MonoBehaviour,IInteractable 
 {
     private Animator animator;
     private bool isOpen;
@@ -14,7 +14,25 @@ public class DoorInteractable : MonoBehaviour
 
     public void ToggleDoor()
     {
-        isOpen = !isOpen;
-        animator.SetBool ("IsOpen",isOpen);
+        if(isOpen = !isOpen)
+        {
+            animator.SetBool("IsOpen", isOpen);
+
+        }
+        else
+        {
+            animator.SetBool("IsOpen",false);
+        }
+        
+    }
+
+    public void Interact()
+    {
+       ToggleDoor();
+    }
+
+    public string GetInteractText()
+    {
+        return "Open/Close";
     }
 }
